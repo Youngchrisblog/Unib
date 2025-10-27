@@ -9,7 +9,6 @@ import {
   stats,
   stocks,
   visitors,
-  adminUsers,
   type Testimonial,
   type VideoLesson,
   type BlogPost,
@@ -18,7 +17,6 @@ import {
   type Stats,
   type Stock,
   type Visitor,
-  type AdminUser,
   type InsertTestimonial,
   type InsertVideoLesson,
   type InsertBlogPost,
@@ -27,7 +25,6 @@ import {
   type InsertStats,
   type InsertStock,
   type InsertVisitor,
-  type InsertAdminUser,
 } from "@shared/schema";
 
 export interface IStorage {
@@ -87,10 +84,6 @@ export interface IStorage {
     avgDuration: number;
     conversionRate: number;
   }>;
-
-  // Admin Users
-  getAdminByUsername(username: string): Promise<AdminUser | undefined>;
-  createAdmin(data: InsertAdminUser): Promise<AdminUser>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -298,17 +291,6 @@ export class DatabaseStorage implements IStorage {
       avgDuration,
       conversionRate,
     };
-  }
-
-  // ========== ADMIN USERS ==========
-  async getAdminByUsername(username: string): Promise<AdminUser | undefined> {
-    const [result] = await db.select().from(adminUsers).where(eq(adminUsers.username, username));
-    return result;
-  }
-
-  async createAdmin(data: InsertAdminUser): Promise<AdminUser> {
-    const [result] = await db.insert(adminUsers).values(data).returning();
-    return result;
   }
 }
 

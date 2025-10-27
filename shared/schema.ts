@@ -4,14 +4,6 @@ import { z } from "zod";
 
 // ========== DATABASE TABLES ==========
 
-// Admin users table
-export const adminUsers = pgTable("admin_users", {
-  id: serial("id").primaryKey(),
-  username: varchar("username", { length: 255 }).notNull().unique(),
-  passwordHash: varchar("password_hash", { length: 255 }).notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-});
-
 // Testimonials table
 export const testimonials = pgTable("testimonials", {
   id: serial("id").primaryKey(),
@@ -109,7 +101,6 @@ export const visitors = pgTable("visitors", {
 
 // ========== INSERT SCHEMAS ==========
 
-export const insertAdminUserSchema = createInsertSchema(adminUsers).omit({ id: true, createdAt: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true, createdAt: true });
 export const insertVideoLessonSchema = createInsertSchema(videoLessons).omit({ id: true, createdAt: true });
 export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({ id: true, createdAt: true });
@@ -120,9 +111,6 @@ export const insertStockSchema = createInsertSchema(stocks).omit({ id: true, upd
 export const insertVisitorSchema = createInsertSchema(visitors).omit({ id: true, firstVisit: true, lastActivity: true });
 
 // ========== TYPES ==========
-
-export type AdminUser = typeof adminUsers.$inferSelect;
-export type InsertAdminUser = z.infer<typeof insertAdminUserSchema>;
 
 export type Testimonial = typeof testimonials.$inferSelect;
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;

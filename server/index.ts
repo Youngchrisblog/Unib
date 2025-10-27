@@ -5,7 +5,6 @@ import pkg from "pg";
 const { Pool } = pkg;
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { createDefaultAdmin } from "./auth";
 
 const app = express();
 
@@ -112,10 +111,9 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  // Seed database and create default admin user
+  // Seed database
   const { seedDatabase } = await import("./db");
   await seedDatabase();
-  await createDefaultAdmin();
   
   const server = await registerRoutes(app);
 
