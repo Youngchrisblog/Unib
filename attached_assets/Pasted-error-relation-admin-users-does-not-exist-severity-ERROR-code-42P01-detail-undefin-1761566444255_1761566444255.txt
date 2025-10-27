@@ -1,0 +1,105 @@
+error: relation "admin_users" does not exist
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '61',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+Node.js v22.21.0
+  constraint: undefined,
+  file: 'parse_relation.c',
+> NODE_ENV=production node dist/index.js
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+  routine: 'parserOpenTable'
+}
+Error seeding database: error: relation "stats" does not exist
+    at file:///app/node_modules/@neondatabase/serverless/index.mjs:1345:74
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async NeonPreparedQuery.execute (file:///app/node_modules/drizzle-orm/neon-serverless/session.js:76:20)
+    at async seedDatabase (file:///app/dist/index.js:571:27)
+    at async file:///app/dist/index.js:1499:3 {
+  length: 105,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '107',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+file:///app/node_modules/@neondatabase/serverless/index.mjs:1345
+o?t(o):n(u)},"cb"),s=new r(function(o,u){n=o,t=u}).catch(o=>{throw Error.captureStackTrace(
+                                                                         ^
+error: relation "admin_users" does not exist
+    at file:///app/node_modules/@neondatabase/serverless/index.mjs:1345:74
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async NeonPreparedQuery.execute (file:///app/node_modules/drizzle-orm/neon-serverless/session.js:76:20)
+    at async DatabaseStorage.getAdminByUsername (file:///app/dist/index.js:995:22)
+    at async createDefaultAdmin (file:///app/dist/index.js:1020:25)
+    at async file:///app/dist/index.js:1500:3 {
+  length: 110,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '61',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+Node.js v22.21.0
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.js
+  column: undefined,
+  dataType: undefined,
+o?t(o):n(u)},"cb"),s=new r(function(o,u){n=o,t=u}).catch(o=>{throw Error.captureStackTrace(
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+file:///app/node_modules/@neondatabase/serverless/index.mjs:1345
+Error seeding database: error: relation "stats" does not exist
+    at file:///app/node_modules/@neondatabase/serverless/index.mjs:1345:74
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async NeonPreparedQuery.execute (file:///app/node_modules/drizzle-orm/neon-serverless/session.js:76:20)
+    at async seedDatabase (file:///app/dist/index.js:571:27)
+    at async file:///app/dist/index.js:1499:3 {
+  length: 105,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '107',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+                                                                         ^
+error: relation "admin_users" does not exist
+    at file:///app/node_modules/@neondatabase/serverless/index.mjs:1345:74
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async NeonPreparedQuery.execute (file:///app/node_modules/drizzle-orm/neon-serverless/session.js:76:20)
+    at async DatabaseStorage.getAdminByUsername (file:///app/dist/index.js:995:22)
+    at async createDefaultAdmin (file:///app/dist/index.js:1020:25)
+    at async file:///app/dist/index.js:1500:3 {
